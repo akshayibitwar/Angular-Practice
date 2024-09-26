@@ -10,16 +10,16 @@ import { PostsService } from '../../service/posts.service';
 export class ChildComponent implements OnInit {
   PostsArray !: Array<any>;
   constructor(private _postsService : PostsService,
-              private _changeDetect : ChangeDetectorRef
+              private _detectChanges : ChangeDetectorRef
   ) { }
 
   ngOnInit(): void {
-    this._postsService.getAllposts()
-              .subscribe((res : any)=>{
-                this.PostsArray = res;
-                console.log(res);
-                this._changeDetect.detectChanges()
-              })
+  //   this._postsService.getAllposts()
+  //             .subscribe((res : any)=>{
+  //               this.PostsArray = res;
+  //               console.log(res);
+  //             this._detectChanges.detectChanges()
+  //             })
   }
 
   detectChangesInParentTree(){
